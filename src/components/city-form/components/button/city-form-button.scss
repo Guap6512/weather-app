@@ -1,0 +1,19 @@
+@import "src/styles/colors";
+
+.city-form-button {
+    background-color: transparent;
+    color: $color-primary;
+    border: none;
+    cursor: pointer;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    &:focus, &:active, &:hover {
+        outline: none;
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+}

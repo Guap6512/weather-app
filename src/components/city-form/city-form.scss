@@ -1,0 +1,16 @@
+@import "src/styles/colors";
+
+.city-form {
+    position: relative;
+    background-color: $color-white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+    border-radius: 8px;
+    padding: 32px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 30px;
+    line-height: 36px;
+}

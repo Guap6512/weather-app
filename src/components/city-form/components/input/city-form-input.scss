@@ -1,0 +1,16 @@
+@import "src/styles/colors";
+
+.city-form-input {
+    background-color: transparent;
+    color: $color-black;
+    border: none;
+    display: block;
+    min-width: 50%;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}

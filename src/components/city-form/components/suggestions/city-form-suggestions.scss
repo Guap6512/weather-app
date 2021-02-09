@@ -1,0 +1,22 @@
+@import "src/styles/colors";
+
+.city-form-suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    color: $color-black;
+    background-color: $color-white;
+    width: 100%;
+    padding: 18px 32px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+
+    &__item {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
