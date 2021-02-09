@@ -13,3 +13,5 @@ export const DefaultCityRequestParameters = {
 };
 
 export const CitySuggestionsApiUrl = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities';
+
+export const DefaultSelectedCity = 'Москва';

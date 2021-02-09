@@ -41,6 +41,7 @@ const CityFormComponent: React.FunctionComponent<CityFormProps> = ({
         onToggle();
         setTemporaryCity('');
     };
+    const onSubmit = () => temporaryCityName?.length && onSelect(temporaryCityName);
 
     const showSuggestions = temporaryCityName.length && suggestions.length;
 
@@ -56,7 +57,7 @@ const CityFormComponent: React.FunctionComponent<CityFormProps> = ({
                     onSelect={onSelect}
                 />
             )}
-            <CityFormButton onClick={() => onSelect(temporaryCityName)}>
+            <CityFormButton onClick={onSubmit}>
                 OK
             </CityFormButton>
         </div>

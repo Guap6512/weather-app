@@ -1,11 +1,10 @@
 import {CityState} from './city-types';
-import {createReducer} from '../../store';
-import {CityActions} from './city-constants';
-import {Action} from '../../store/store-types';
+import {createReducer, Action} from '../../store';
+import {CityActions, DefaultSelectedCity} from './city-constants';
 
 const cityInitialState: CityState = {
     temporaryCityName: '',
-    selectedCityName: '',
+    selectedCityName: DefaultSelectedCity,
     suggestions: [],
 };
 
