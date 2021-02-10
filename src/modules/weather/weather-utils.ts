@@ -11,10 +11,14 @@ export const processWeatherResponse = (weatherResponse: WeatherForecastResponse)
     const currentWeatherResponse = weatherResponse.list[0];
     const currentDescription = currentWeatherResponse.weather[0];
 
+    const descriptionText = currentDescription.description[0].toUpperCase()
+        + currentDescription.description.substring(1);
+    const temperature = currentWeatherResponse.main.temp.toFixed();
+
     return ({
-        description: currentDescription.description,
+        temperature,
+        description: descriptionText,
         icon: currentDescription.icon,
-        temperature: currentWeatherResponse.main.temp,
         windSpeed: currentWeatherResponse.wind.speed,
         windDirection: findDirection(currentWeatherResponse.wind.deg),
         pressure: currentWeatherResponse.main.pressure,

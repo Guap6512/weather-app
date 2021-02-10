@@ -37,8 +37,9 @@
     "comma-dangle": ["error", "always-multiline"],
     "react/jsx-tag-spacing": ["error", {"beforeSelfClosing": "always"}],
     "max-len": ["warn", {"code": 120}],
-    "jsx-a11y/click-events-have-key-events": ["warn"],
-    "jsx-a11y/no-noninteractive-element-interactions": ["warn"],
+    "jsx-a11y/no-autofocus": ["off"],
+    "jsx-a11y/click-events-have-key-events": ["off"],
+    "jsx-a11y/no-noninteractive-element-interactions": ["off"],
     "react/button-has-type": "off"
   }
 }

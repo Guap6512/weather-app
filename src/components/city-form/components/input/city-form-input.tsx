@@ -5,6 +5,7 @@ interface CityFormInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 export const CityFormInput: React.FunctionComponent<CityFormInputProps> = ({...props}: CityFormInputProps) => (
     <input
+        autoFocus
         className="city-form-input"
         {...props}
     />

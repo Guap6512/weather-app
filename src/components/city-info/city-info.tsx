@@ -3,16 +3,22 @@ import './city-info.scss';
 import {connect} from 'react-redux';
 import {Button} from '../button';
 import {CityForm} from '../city-form';
-import {getSelectedCity} from '../../modules/city/city-selectors';
 import {AppState, Dispatch} from '../../store';
 import {loadWeather as loadWeatherAction} from '../../modules/weather';
+import {UnitsToggle} from '../units-toggle';
+import {locateCity as locateCityAction, getSelectedCity} from '../../modules/city';
 
 interface CityInfoProps {
     selectedCity: string;
     loadWeather: () => void;
+    locateCity: () => void;
 }
 
-const CityInfoComponent: React.FunctionComponent<CityInfoProps> = ({selectedCity, loadWeather}: CityInfoProps) => {
+const CityInfoComponent: React.FunctionComponent<CityInfoProps> = ({
+    selectedCity,
+    loadWeather,
+    locateCity,
+}: CityInfoProps) => {
     const [isEditable, setEditable] = React.useState<boolean>(false);
     const onToggleEditable = () => setEditable(!isEditable);
 
@@ -22,27 +28,25 @@ const CityInfoComponent: React.FunctionComponent<CityInfoProps> = ({selectedCity
 
     return isEditable
         ? (
-            <div className="city-info">
+            <header className="city-info">
                 <CityForm onToggle={onToggleEditable} />
-            </div>
+            </header>
         )
         : (
-            <div className="city-info">
-                <h3
-                    className="city-info__current"
-                    onClick={onToggleEditable}
-                >
+            <header className="city-info">
+                <h3 className="city-info__current">
                     {selectedCity}
+                    <UnitsToggle />
                 </h3>
                 <div className="city-info__controls">
                     <Button onClick={onToggleEditable}>
                         Сменить город
                     </Button>
-                    <Button>
+                    <Button onClick={locateCity}>
                         Моё местоположение
                     </Button>
                 </div>
-            </div>
+            </header>
         );
 };
 
@@ -52,6 +56,7 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     loadWeather: () => dispatch(loadWeatherAction()),
+    locateCity: () => dispatch(locateCityAction()),
 });
 
 export const CityInfo = connect(mapStateToProps, mapDispatchToProps)(CityInfoComponent);

@@ -6,7 +6,7 @@ export interface WeatherState {
 export interface WeatherInfo {
     description: string;
     icon: string;
-    temperature: number;
+    temperature: string;
     windSpeed: number;
     windDirection: string;
     pressure: number;

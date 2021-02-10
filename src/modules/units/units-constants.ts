@@ -1,4 +1,4 @@
-import {Units} from './units-types';
+import {MetricalSystems, Units} from './units-types';
 
 export const UNITS_MODULE_NAME = 'UNITS_MODULE';
 
@@ -7,7 +7,7 @@ export const UnitsActions = {
     SET_UNITS: 'SET_UNITS',
 };
 
-export const MetricalSystems: Record<Units, string> = {
-    [Units.CELSIUS]: 'metric',
-    [Units.FAHRENHEIT]: 'imperial',
+export const MetricalSystemsToUnits: Record<Units, string> = {
+    [Units.CELSIUS]: MetricalSystems.METRIC,
+    [Units.FAHRENHEIT]: MetricalSystems.IMPERIAL,
 };

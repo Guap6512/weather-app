@@ -2,7 +2,7 @@ import {AppState, createAction, Dispatch} from '../../store';
 import {WeatherInfo} from './weather-types';
 import {WeatherActions} from './weather-constants';
 import {getSelectedCity} from '../city/city-selectors';
-import {convertUnitToSystem, getSelectedUnits} from '../units';
+import {convertUnitsToSystem, getSelectedUnits} from '../units';
 import {fetchWeatherData} from './weather-api';
 import {processWeatherResponse} from './weather-utils';
 
@@ -18,7 +18,7 @@ export const loadWeather = () => async (dispatch: Dispatch, getState: () => AppS
     }
 
     try {
-        const {data: weatherResponse} = await fetchWeatherData(selectedCity, convertUnitToSystem(selectedUnit));
+        const {data: weatherResponse} = await fetchWeatherData(selectedCity, convertUnitsToSystem(selectedUnit));
 
         const weatherInfo = processWeatherResponse(weatherResponse);
 
