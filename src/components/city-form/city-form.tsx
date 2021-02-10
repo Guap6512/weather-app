@@ -48,6 +48,7 @@ const CityFormComponent: React.FunctionComponent<CityFormProps> = ({
     return (
         <div className="city-form">
             <CityFormInput
+                onBlur={onToggle}
                 onChange={onChange}
                 value={temporaryCityName}
             />
